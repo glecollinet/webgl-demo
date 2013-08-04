@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>demo3d</title>
+    <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans: 400, 700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+      body {
+        color: #555;
+        font-size: 13px;
+        text-align: center;
+        background: #fff;
+        margin: 0px;
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      h1 {
+        font-size: 30px;
+        margin: 70px auto 20px auto;
+      }
+
+      .features {
+        margin: 0 auto;
+        width: 900px;
+      }
+
+      .features:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+
+      .feature {
+        width: 300px;
+        float: left;
+      }
+
+      .container {
+        height: 300px;
+        width: 300px;
+        position: relative;
+      }
+
+      .container canvas {
+        position: relative;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .circle {
+        height: 200px;
+        width: 200px;
+        border-radius: 200px;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        -webkit-transform-origin: center center;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        -webkit-transition: .5s -webkit-transform ease;
+      }
+
+      .text {
+        width: 200px;
+        font-size: 14px;
+        line-height: 21px;
+        margin: -40px auto 0 auto;
+        color: #808080;
+      }
+
+      h2 {
+        color: #555;
+        font-size: 21px;
+      }
+
+      h2 span {
+        color: #95A5A6;
+      }
+
+      .call-to-action {
+        margin-top: 40px;
+      }
+
+      .button {
+        background: #95A5A6;
+        color: #fff;
+        font-weight: 600;
+        display: block;
+        border-radius: 8px;
+        font-size: 18px;
+        height: 50px;
+        line-height: 50px;
+        text-decoration: none;
+        margin: 0 auto;
+        width: 300px;
+      }
+
+      .button:hover {
+        background: #7F8C8D;
+      }
+
+      #info {
+        background: #ECF0F1;
+        height: 50px;
+        text-align: left;
+        line-height: 50px;
+        padding-left: 30px;
+      }
+
+      #credits {
+        margin-top: 80px;
+        margin-bottom: 40px;
+      }
+
+      a {
+        color: #3498DB;
+      }
+
+      a:not(.button):hover {
+        color: #2980B9;
+      }
+
+      /* Shield */
+
+      #shield-container .circle { background: #2c96dd; }
+
+      /* Ball */
+
+      #ball-container .circle { background: #f3c600; }
+
+      #ball-container .shadow {
+        position: absolute;
+        top: 144px;
+        left: 45px;
+        height: 28px;
+        width: 111px;
+        background: url('img/shadow.png') no-repeat center center;
+        opacity: 0.7;
+      }
+
+      /* Dollar */
+
+      #dollar-container .circle { background: #1ecd6d; }
+
+    </style>
+  </head>
+  <body>
+    <div id="info">
+      This is a demo related to <a href="#">this article</a>. Hover over the circles to trigger the 3D animations.
+    </div>
+
+    <h1>Why HTML5 is awesome</h1>
+
+    <div class="features">
+
+      <div class="feature">
+        <div id="shield-container" class="container">
+          <div class="circle"></div>
+        </div>
+        <div class="text">
+          <h2><span>1.</span> HTML5</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non nisl faucibus.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div id="ball-container" class="container">
+          <div class="circle">
+            <div class="shadow"></div>
+          </div>
+        </div>
+        <div class="text">
+          <h2><span>2.</span> ????</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non nisl faucibus.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div id="dollar-container" class="container">
+          <div class="circle"></div>
+        </div>
+        <div class="text">
+          <h2><span>3.</span> Profit</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non nisl faucibus.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="call-to-action">
+      <a href="#" class="button">Try HTML5 now</a>
+    </div>
+
+    <div id="credits">
+     Made by <a href="http://twitter.com/glecollinet">@glecollinet</a> using <a href="http://threejs.org">three.js</a> and <a href="http://jeremyckahn.github.io/shifty/">Shifty</a></div>
+    </div>
+
+    <script src="js/shifty.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/three.min.js"></script>
+    <script src="js/html5.js"></script>
+    <script src="js/ball.js"></script>
+    <script src="js/dollar.js"></script>
+    <script>
+      window.deg2rad = function(deg) { return deg * (Math.PI / 180); };
+      initHTML5();
+      initDollar();
+      initBall();
+    </script>
+  </body>
+</html>
