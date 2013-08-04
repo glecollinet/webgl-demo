@@ -113,8 +113,9 @@
       }
 
       #credits {
-        margin-top: 80px;
-        margin-bottom: 40px;
+        display: inline-block;
+        float: right;
+        padding-right: 30px;
       }
 
       a {
@@ -152,6 +153,10 @@
   <body>
     <div id="info">
       This is a demo related to <a href="#">this article</a>. Hover over the circles to trigger the 3D animations.
+
+      <div id="credits">
+       Made by <a href="http://twitter.com/glecollinet">@glecollinet</a> using <a href="http://threejs.org">three.js</a> and <a href="http://jeremyckahn.github.io/shifty/">Shifty</a></div>
+      </div>
     </div>
 
     <h1>Why HTML5 is awesome</h1>
@@ -194,10 +199,6 @@
 
     <div class="call-to-action">
       <a href="#" class="button">Try HTML5 now</a>
-    </div>
-
-    <div id="credits">
-     Made by <a href="http://twitter.com/glecollinet">@glecollinet</a> using <a href="http://threejs.org">three.js</a> and <a href="http://jeremyckahn.github.io/shifty/">Shifty</a></div>
     </div>
 
     <script src="js/shifty.min.js"></script>
